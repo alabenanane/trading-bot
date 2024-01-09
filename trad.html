@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <?php
+// استقبال البيانات المرسلة من TradingView
+$data = file_get_contents('php://input');
+
+// تحويل البيانات المستلمة إلى مصفوفة لسهولة الاستخدام
+$parsed_data = json_decode($data, true);
+
+// يمكنك هنا تنفيذ الإجراءات المطلوبة باستخدام $parsed_data
+
+// مثال على إرسال استجابة
+$response = array('message' => 'Received the data successfully');
+echo json_encode($response);
+?>
+</body>
+</html>
